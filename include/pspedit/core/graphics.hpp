@@ -1,10 +1,20 @@
 #pragma once
 
-#include <optional>
-
-#include <pspedit/format/image_format.hpp>
+#include <pspedit/core/scalar.hpp>
 
 namespace pspedit {
+
+enum struct texture_internal_format {
+    rgba5650,
+    rgba4444,
+    rgba5551,
+    rgba8888
+};
+
+enum struct texture_filter {
+    nearest,
+    linear
+};
 
 enum struct material_face_select_format {
     back,
@@ -47,19 +57,6 @@ struct material_blend_format {
     material_blend_operation_format blend_operation = material_blend_operation_format::add;
     material_blend_mode_format blend_source = material_blend_mode_format::source_alpha;
     material_blend_mode_format blend_destination = material_blend_mode_format::one_minus_source_alpha;
-};
-
-struct material_format {
-    std::optional<image_reference_format> albedo;
-    std::optional<image_reference_format> normal;
-    material_cull_format cull;
-    material_depth_format depth;
-    material_blend_format blend;
-    u32 color = 0xFFFFFFFF;
-};
-
-struct material_reference_format {
-    id_format id;
 };
 
 }
