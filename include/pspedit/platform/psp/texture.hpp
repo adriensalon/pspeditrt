@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include <pspedit/format/image_format.hpp>
+#include <pspedit/core/image.hpp>
 
 namespace pspedit {
 
@@ -17,8 +17,8 @@ struct psp_texture_descriptor {
     u32 height;
     u32 stride_width;
     texture_internal_format format;
-    texture_filter_format min_filter;
-    texture_filter_format mag_filter;
+    texture_filter min_filter;
+    texture_filter mag_filter;
     u8 swizzle;
 };
 
@@ -30,7 +30,7 @@ struct psp_texture_object {
     psp_texture_object& operator=(psp_texture_object&& other);
     ~psp_texture_object();
 
-    void transfer(const texture_storage storage);
+    void transfer(const psp_texture_storage storage);
     void bind();
 
 private:

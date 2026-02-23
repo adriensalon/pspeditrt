@@ -8,18 +8,18 @@
 
 namespace pspedit {
 
-struct transform_object_reference;
+struct transform_object_reference {
+    object_id id;
+};
 
 struct transform_object {
     mat4_f32 transform;
     std::vector<transform_object_reference> children;
 };
 
-struct transform_object_reference {
-    object_id id;
+struct shared_transform {
+    runtime_id id = null_runtime_id;
 };
-
-struct shared_transform;
 
 struct runtime_transform {
     runtime_transform();
@@ -48,10 +48,6 @@ private:
     mat4_f32 _transform;
     std::optional<shared_transform> _parent;
     std::vector<shared_transform> _children;
-};
-
-struct shared_transform {
-    runtime_id id = null_runtime_id;
 };
 
 }

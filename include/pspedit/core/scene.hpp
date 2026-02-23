@@ -7,7 +7,7 @@ namespace pspedit {
 
 struct scene_object {
     std::vector<entity_id> entities;
-    std::vector<script_format> scripts; // go sparse
+    std::vector<script_object> scripts; // go sparse
     std::vector<transform_object> transforms; // go sparse
 };
 

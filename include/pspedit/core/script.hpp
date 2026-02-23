@@ -7,19 +7,23 @@
 
 namespace pspedit {
 
-struct script_field_format {
+struct script_object_field {
     u32 field_id;
     u32 value_type_id;
     std::vector<u8> bytes;
 };
 
-struct script_format {
+struct script_object {
     u32 script_id;
-    std::vector<script_field_format> fields;
+    std::vector<script_object_field> fields;
+    bool has_create;
+    bool has_update;
+    bool has_draw;
+    bool has_destroy;
 };
 
-struct script_reference_format {
-    id_format id;
+struct script_object_reference {
+    object_id id;
 };
 
 // runtime_script

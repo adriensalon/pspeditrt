@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include <pspedit/format/id_format.hpp>
+#include <pspedit/core/id.hpp>
 
 namespace pspedit {
 
@@ -11,7 +11,7 @@ struct mesh_format {
 };
 
 struct mesh_reference_format {
-    id_format id;
+    object_id id;
 };
 
 }

@@ -29,16 +29,16 @@ enum struct material_culling_format {
 
 enum struct material_depth_function_format {
     less_equal
-}
+};
 
 enum struct material_blend_operation_format {
     add
-}
+};
 
 enum struct material_blend_mode_format {
     source_alpha,
     one_minus_source_alpha
-}
+};
 
 struct material_cull_format {
     bool is_enabled = false;

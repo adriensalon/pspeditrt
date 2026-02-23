@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include <pspedit/format/material_format.hpp>
+#include <pspedit/core/material.hpp>
 
 namespace pspedit {
 
@@ -13,14 +13,14 @@ struct psp_shader_descriptor {
 };
 
 struct psp_shader_object {
-    psp_shader_object(const shader_descriptor& descriptor = {});
+    psp_shader_object(const psp_shader_descriptor& descriptor = {});
     psp_shader_object(const psp_shader_object&) = delete;
     psp_shader_object& operator=(const psp_shader_object&) = delete;
     psp_shader_object(psp_shader_object&&) = default;
     psp_shader_object& operator=(psp_shader_object&&) = default;
     ~psp_shader_object();
 
-    void bind(command_object& command) const;
+    // void bind(psp_command_object& command) const;
 
 private:
     struct psp_shader_implementation;
