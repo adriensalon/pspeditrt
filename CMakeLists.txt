@@ -3,9 +3,7 @@ project(pspeditrt)
 
 add_executable(pspedirt "source/entry.cpp")
 set_property(TARGET pspedirt PROPERTY CXX_STANDARD 17)
-target_link_libraries(pspedirt PRIVATE pspdebug)
-target_link_libraries(pspedirt PRIVATE pspge)
-target_link_libraries(pspedirt PRIVATE pspdisplay)
+target_link_libraries(pspedirt PRIVATE pspdebug pspge pspdisplay pspctrl pspgu psprtc)
 
 create_pbp_file(
     TARGET pspedirt
